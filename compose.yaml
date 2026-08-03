@@ -3,7 +3,7 @@
 #
 services:
   backrest:
-    image: garethgeorge/backrest:latest
+    image: ghcr.io/garethgeorge/backrest:latest
     container_name: backrest
     hostname: backrest
     environment:
