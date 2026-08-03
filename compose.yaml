@@ -1,7 +1,6 @@
 #
 # https://www.linuxserver.io/blog/backup-your-data-to-b2-with-restic-and-backrest
 #
----
 services:
   backrest:
     image: garethgeorge/backrest:latest
@@ -14,10 +13,10 @@ services:
       - TMPDIR=/tmp
       - TZ=${TZ}
     volumes:
-      - ${LOCVOL1}backrest/data:/data
-      - ${LOCVOL1}backrest/config:/config
-      - ${LOCVOL1}backrest/cache:/cache
-      - ${LOCVOL1}backrest/tmp:/tmp
+      - ${APPDATA}/backrest/data:/data
+      - ${APPDATA}/backrest/config:/config
+      - ${APPDATA}/backrest/cache:/cache
+      - ${APPDATA}/backrest/tmp:/tmp
       - ${BACKUPSRC1}:/userdata # backup source
       - ${BACKUPDST}:/backupdst # local backup destination, usually /opt/backrest or /etc/backrest
     ports:
